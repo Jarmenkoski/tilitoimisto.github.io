@@ -1,0 +1,109 @@
+
+/* Perustyyli – Tilitoimisto Suomalainen */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: #222;
+  line-height: 1.6;
+}
+
+header, main, footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #ffa726;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #ffa726;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 3rem 0;
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+.section-light {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffa726;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e68a00;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Navigaatio */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hero-osio */
+.hero {
+  background-image: url('kuvat/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero h3 {
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem;
+}
