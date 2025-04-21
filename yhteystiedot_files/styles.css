@@ -1,0 +1,26 @@
+/* Korjaa lomakkeen label-tekstin sijoittumisen */
+
+.form-input input:focus + label span.it-c,
+.form-input input:not(:placeholder-shown) + label span.it-c {
+    transform: translateY(-20px); /* Siirrä label-teksti ylös */
+    font-size: 0.85em; /* Pienennä fonttikokoa */
+    color: #666; /* Muuta väriä, jos haluat */
+    transition: all 0.2s ease-in-out; /* Lisää animaatio */
+}
+
+.form-input label span.it-c {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-input {
+    position: relative;
+}
+
+.form-input input {
+    padding: 10px 10px 10px 10px; /* Lisää tilaa tekstille */
+}
