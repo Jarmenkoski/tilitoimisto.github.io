@@ -219,9 +219,20 @@ suomalainen.jaakko(a)gmail.com</strong></p>
 
 	</form>
 
-    
+<script>
+(function(){
+var p=new URLSearchParams(window.location.search);
+var t=p.get('tositteet');
+if(t){
+var v=document.getElementById('viesti');
+if(v)v.value='Kirjanpitotarjouspyyntö, arvioitu tositemäärä: '+t+' kpl/kk. ';
+}
+})();
+</script>
 
-    
+
+
+
 </div></div>
 </div>
 			</div>
