@@ -28,6 +28,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				 </iframe>
 			</noscript>
 
+<style>
+.cb{position:fixed;bottom:0;left:0;right:0;background:rgba(26,26,26,.97);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;z-index:99999;font-size:.9em;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.cb-text{max-width:600px;line-height:1.5;opacity:.85}
+.cb-btn{padding:10px 22px;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:.9em}
+.cb-ok{background:#ffa726;color:#1a1a1a}.cb-ok:hover{background:#ffb74d}
+.cb-no{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}.cb-no:hover{border-color:#ffa726;color:#ffa726}
+.cb-hide{display:none!important}
+</style>
+<div class="cb" id="cookie-banner">
+<span class="cb-text">Tämä sivusto käyttää evästeitä analytiikkaan ja käyttökokemuksen parantamiseen.</span>
+<button class="cb-btn cb-ok" id="cb-ok">Hyväksy</button>
+<button class="cb-btn cb-no" id="cb-no">Hylkää</button>
+</div>
+<script>
+(function(){
+if(localStorage.getItem('cb-consent')){document.getElementById('cookie-banner').classList.add('cb-hide');return;}
+document.getElementById('cb-ok').addEventListener('click',function(){localStorage.setItem('cb-consent','accepted');document.getElementById('cookie-banner').classList.add('cb-hide');});
+document.getElementById('cb-no').addEventListener('click',function(){localStorage.setItem('cb-consent','rejected');document.getElementById('cookie-banner').classList.add('cb-hide');});
+})();
+</script>
+
 <div class="wnd-page l-page cs-gray-3 ac-ffa726 ac-normal t-t-fs-m t-t-fw-m t-t-sp-n t-t-d-n t-s-fs-m t-s-fw-m t-s-sp-n t-s-d-n t-p-fs-s t-p-fw-m t-p-sp-n t-h-fs-m t-h-fw-m t-h-sp-n t-bq-fs-m t-bq-fw-m t-bq-sp-n t-bq-d-l t-btn-fw-s t-nav-fw-s t-pd-fw-s t-nav-tt-n">
     <div class="l-w t cf t-06">
         <div class="l-bg cf sc-m">
@@ -418,6 +439,80 @@ if(el)el.className=rows[k]===r.row?'active-row':'';
 
 slider.addEventListener('input',update);
 update();
+})();
+</script>
+
+</div>
+</div>
+</div>
+</section><section class="s s-basic cf sc-m wnd-background-image wnd-w-wider wnd-s-normal wnd-h-auto">
+<div class="s-w cf">
+<div class="s-o s-fs cf">
+<div class="s-bg cf">
+<div class="s-bg-l wnd-background-image fx-grayscale-dark bgpos-center-center bgatt-scroll overlay-black">
+<picture><img src="./palvelut_files/3vztw4.jpg" width="1920" height="1325" alt="Usein kysytyt kysymykset" loading="lazy"></picture>
+</div>
+</div>
+<div class="s-c s-fs cf">
+
+<style>
+.faq-wrap{max-width:700px;margin:0 auto;padding:40px 20px;color:#fff}
+.faq-wrap h2{text-align:center;font-size:1.6em;margin-bottom:24px;font-weight:700}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.12);padding:0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;font-weight:600;font-size:1.02em;background:none;border:none;color:#fff;width:100%;text-align:left;gap:12px}
+.faq-q:hover{color:#ffa726}
+.faq-arrow{font-size:.8em;transition:transform .3s;color:#ffa726;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 0;font-size:.95em;line-height:1.6;opacity:.8}
+.faq-item.open .faq-a{max-height:300px;padding:0 0 16px 0}
+@media(max-width:500px){.faq-wrap h2{font-size:1.3em}.faq-q{font-size:.95em}}
+</style>
+
+<div class="faq-wrap">
+<h2>Usein kysytyt kysymykset</h2>
+
+<div class="faq-item">
+<button class="faq-q">Miten vaihdan tilitoimistoa?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Tilitoimiston vaihtaminen on helppoa. Ota meihin yhteyttä, niin hoidamme siirron puolestasi. Pyydämme edelliseltä tilitoimistolta tarvittavat materiaalit ja huolehdimme sujuvasta siirtymästä ilman katkoksia kirjanpidossasi.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">Mitä kirjanpito maksaa?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Kirjanpidon hinta riippuu tositteiden määrästä. Pienyrittäjän kirjanpito alkaa 40 eurosta kuukaudessa. Kokeile yllä olevaa hintalaskuria saadaksesi arvion, tai pyydä tarjous – kerromme tarkan hinnan yrityksesi tarpeisiin.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">Voiko kirjanpidon hoitaa kokonaan etänä?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Kyllä! Kaikki palvelumme toimivat täysin etänä. Materiaalit voi toimittaa sähköisesti ja kommunikoimme joustavasti puhelimitse, sähköpostilla tai videotapaamisilla. Tarvittaessa voimme myös tavata paikan päällä.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">Mitä tositteita yritykseni tarvitsee kirjanpitoon?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Tyypillisiä tositteita ovat myyntilaskut, ostolaskut, kuitit, tiliotteet ja palkkadokumentit. Neuvomme sinua tarkemmin yrityksesi perustamisvaiheessa tai kirjanpidon alkaessa, mitä tositteita juuri sinun yrityksesi tarvitsee.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">Tarjoatteko apua yrityksen perustamiseen?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Kyllä! Autamme yrityksen perustamisessa, yhtiömuodon valinnassa, rekisteröinneissä ja alkuvaiheen taloushallinnon järjestämisessä. Tarjoamme myös liiketoimintasuunnitelman laadintaa ja rahoitusneuvontaa.</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q">Miten nopeasti saan yhteydenoton jälkeen vastauksen?<span class="faq-arrow">&#9660;</span></button>
+<div class="faq-a">Pyrimme vastaamaan kaikkiin yhteydenottoihin yhden arkipäivän kuluessa. Kiireellisissä asioissa voit myös soittaa suoraan – autamme mielellämme nopeallakin aikataululla.</div>
+</div>
+
+</div>
+
+<script>
+(function(){
+document.querySelectorAll('.faq-q').forEach(function(btn){
+btn.addEventListener('click',function(){
+var item=this.parentElement;
+var wasOpen=item.classList.contains('open');
+document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
+if(!wasOpen)item.classList.add('open');
+});
+});
 })();
 </script>
 

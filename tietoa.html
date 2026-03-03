@@ -29,6 +29,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				 </iframe>
 			</noscript>
 
+<style>
+.cb{position:fixed;bottom:0;left:0;right:0;background:rgba(26,26,26,.97);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;z-index:99999;font-size:.9em;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.cb-text{max-width:600px;line-height:1.5;opacity:.85}
+.cb-btn{padding:10px 22px;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:.9em}
+.cb-ok{background:#ffa726;color:#1a1a1a}.cb-ok:hover{background:#ffb74d}
+.cb-no{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}.cb-no:hover{border-color:#ffa726;color:#ffa726}
+.cb-hide{display:none!important}
+</style>
+<div class="cb" id="cookie-banner">
+<span class="cb-text">Tämä sivusto käyttää evästeitä analytiikkaan ja käyttökokemuksen parantamiseen.</span>
+<button class="cb-btn cb-ok" id="cb-ok">Hyväksy</button>
+<button class="cb-btn cb-no" id="cb-no">Hylkää</button>
+</div>
+<script>
+(function(){
+if(localStorage.getItem('cb-consent')){document.getElementById('cookie-banner').classList.add('cb-hide');return;}
+document.getElementById('cb-ok').addEventListener('click',function(){localStorage.setItem('cb-consent','accepted');document.getElementById('cookie-banner').classList.add('cb-hide');});
+document.getElementById('cb-no').addEventListener('click',function(){localStorage.setItem('cb-consent','rejected');document.getElementById('cookie-banner').classList.add('cb-hide');});
+})();
+</script>
+
 <div class="wnd-page l-page cs-gray-3 ac-ffa726 ac-normal t-t-fs-m t-t-fw-m t-t-sp-n t-t-d-n t-s-fs-m t-s-fw-m t-s-sp-n t-s-d-n t-p-fs-s t-p-fw-m t-p-sp-n t-h-fs-m t-h-fw-m t-h-sp-n t-bq-fs-m t-bq-fw-m t-bq-sp-n t-bq-d-l t-btn-fw-s t-nav-fw-s t-pd-fw-s t-nav-tt-n">
     <div class="l-w t cf t-06">
         <div class="l-bg cf sc-m">
@@ -159,6 +180,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 		</div>
 	</div>
+</section><section class="s s-basic cf sc-m wnd-background-image wnd-w-wider wnd-s-normal wnd-h-auto">
+<div class="s-w cf">
+<div class="s-o s-fs cf">
+<div class="s-bg cf">
+<div class="s-bg-l wnd-background-image fx-grayscale-dark bgpos-center-center bgatt-scroll overlay-black">
+<picture><img src="./tietoa/0d78sz.jpg" width="1920" height="1268" alt="Asiakkaiden kokemuksia" loading="lazy"></picture>
+</div>
+</div>
+<div class="s-c s-fs cf">
+
+<style>
+.ref-wrap{max-width:640px;margin:0 auto;padding:40px 20px;text-align:center;color:#fff}
+.ref-wrap h2{font-size:1.6em;margin-bottom:8px;font-weight:700}
+.ref-sub{font-size:.9em;opacity:.6;margin-bottom:28px}
+.ref-stars{color:#ffa726;font-size:1.4em;letter-spacing:4px;margin-bottom:16px}
+.ref-card{position:relative;min-height:120px}
+.ref-item{opacity:0;position:absolute;top:0;left:0;right:0;transition:opacity .6s ease}
+.ref-item.active{opacity:1;position:relative}
+.ref-text{font-size:1.05em;font-style:italic;line-height:1.6;opacity:.9}
+.ref-dots{margin-top:22px;display:flex;justify-content:center;gap:10px}
+.ref-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;border:none;transition:background .3s}
+.ref-dot.active{background:#ffa726}
+.ref-src{margin-top:18px;font-size:.78em;opacity:.4}
+.ref-src a{color:#ffa726;text-decoration:underline}
+@media(max-width:500px){.ref-wrap h2{font-size:1.3em}.ref-text{font-size:.95em}}
+</style>
+
+<div class="ref-wrap">
+<h2>Asiakkaidemme kokemuksia</h2>
+<p class="ref-sub">Arvostelut Briox Connect -palvelusta</p>
+<div class="ref-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="ref-card">
+<div class="ref-item active" data-ref="0">
+<p class="ref-text">"Hyvä ja osaava palvelu. Pidän suurena plussana että kirjanpidon tasoa pystyy neuvottelemalla räätälöimään itselleni sellaiseksi kuin koen tarpeelliseksi. Kohtuullisen hintainen myös meille aloitteleville pienyrittäjille."</p>
+</div>
+<div class="ref-item" data-ref="1">
+<p class="ref-text">"Taloyhtiön kirjanpito ja rästikirjanpito hoitui mallikkaasti ja tehokkaasti myös kustannusmielessä. Suosittelen."</p>
+</div>
+<div class="ref-item" data-ref="2">
+<p class="ref-text">"Jaakon kanssa työskennellyt reilu vuoden ajan ja yhteistyö on toiminut todellakin moitteettomasti. Kommunikaatio pelaa molempiin suuntiin ja Jaakolta saa nopeallakin aikataululla apua. Arvosana täysi kymppi!"</p>
+</div>
+</div>
+<div class="ref-dots">
+<button class="ref-dot active" data-i="0" aria-label="Arvostelu 1"></button>
+<button class="ref-dot" data-i="1" aria-label="Arvostelu 2"></button>
+<button class="ref-dot" data-i="2" aria-label="Arvostelu 3"></button>
+</div>
+<p class="ref-src">Lähde: <a href="https://connect.briox.com/fi/accounting-agencies/a5ffc519-94e3-4750-b485-a8fa7da780d3" target="_blank" rel="noopener">Briox Connect</a></p>
+</div>
+
+<script>
+(function(){
+var items=document.querySelectorAll('.ref-item');
+var dots=document.querySelectorAll('.ref-dot');
+var cur=0,timer;
+function show(i){
+items[cur].className='ref-item';dots[cur].className='ref-dot';
+cur=i;items[cur].className='ref-item active';dots[cur].className='ref-dot active';
+}
+function next(){show((cur+1)%items.length);}
+function start(){timer=setInterval(next,5000);}
+dots.forEach(function(d){d.addEventListener('click',function(){
+clearInterval(timer);show(+this.getAttribute('data-i'));start();
+});});
+start();
+})();
+</script>
+
+</div>
+</div>
+</div>
 </section></div>
 </div>
         </main>
