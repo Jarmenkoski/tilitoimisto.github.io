@@ -117,7 +117,15 @@
 .avk-cta-wrap h2{font-size:1.6em}
 .avk-compare-table th,.avk-compare-table td{padding:10px 12px;font-size:.88em}
 .avk-compare-save-amount{font-size:1.6em}
-.avk-extra-table th,.avk-extra-table td{padding:8px 10px;font-size:.85em}
+.avk-extra-table{display:block;background:none;border-radius:0;margin-bottom:28px}
+.avk-extra-table thead{display:none}
+.avk-extra-table tbody,.avk-extra-table tr{display:block;width:100%}
+.avk-extra-table tr{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.avk-extra-table td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-size:.9em}
+.avk-extra-table td:last-child{border-bottom:none}
+.avk-extra-table td:first-child{display:block;font-weight:700;color:#ffa726;padding-bottom:8px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.15)}
+.avk-extra-table td:not(:first-child)::before{content:attr(data-label);font-size:.75em;text-transform:uppercase;letter-spacing:.5px;opacity:.7;flex-shrink:0}
+.avk-extra-table td:not(:first-child){text-align:right}
 .avk-process-step{padding:18px;gap:16px}
 .avk-process-num{width:38px;height:38px;font-size:1.1em}
 .avk-form{padding:22px}
@@ -469,16 +477,16 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <table class="avk-extra-table">
 <thead><tr><th>Palvelu</th><th>Kustannus</th><th>Kenelle maksat</th></tr></thead>
 <tbody>
-<tr><td>PRH — Osakeyhtiön ohjattu perustaminen</td><td>300 €</td><td>PRH</td></tr>
-<tr><td>PRH — Ay / Ky -perustamisilmoitus</td><td>300 €</td><td>PRH</td></tr>
-<tr><td>PRH — Yksityisen elinkeinonharjoittajan (toiminimi)</td><td>75 €</td><td>PRH</td></tr>
-<tr><td>PRH — Muu elinkeinonharjoittajan perustamisilmoitus</td><td>400 €</td><td>PRH</td></tr>
-<tr><td>Domain (.fi / .com)</td><td>10–20 €/v</td><td>Rekisteröijä</td></tr>
-<tr><td>Kirjanpito-ohjelmisto</td><td>alkaen 5,90 €/kk</td><td>Ohjelmistotoimittaja</td></tr>
-<tr><td>Google Workspace (sähköposti yritys.fi)</td><td>~14 €/kk</td><td>Google</td></tr>
-<tr><td>Mainosbudjetti</td><td>10–50 €/pv</td><td>Facebook / Google</td></tr>
-<tr><td>Jatkuva kirjanpito + hosting</td><td>alkaen 50 €/kk</td><td>Tilitoimisto Suomalainen</td></tr>
-<tr><td>Jatkuva mainonnan hoito (valinnainen)</td><td>250 €/kk</td><td>Tilitoimisto Suomalainen</td></tr>
+<tr><td data-label="Palvelu">PRH — Osakeyhtiön ohjattu perustaminen</td><td data-label="Kustannus">300 €</td><td data-label="Kenelle maksat">PRH</td></tr>
+<tr><td data-label="Palvelu">PRH — Ay / Ky -perustamisilmoitus</td><td data-label="Kustannus">300 €</td><td data-label="Kenelle maksat">PRH</td></tr>
+<tr><td data-label="Palvelu">PRH — Yksityisen elinkeinonharjoittajan (toiminimi)</td><td data-label="Kustannus">75 €</td><td data-label="Kenelle maksat">PRH</td></tr>
+<tr><td data-label="Palvelu">PRH — Muu elinkeinonharjoittajan perustamisilmoitus</td><td data-label="Kustannus">400 €</td><td data-label="Kenelle maksat">PRH</td></tr>
+<tr><td data-label="Palvelu">Domain (.fi / .com)</td><td data-label="Kustannus">10–20 €/v</td><td data-label="Kenelle maksat">Rekisteröijä</td></tr>
+<tr><td data-label="Palvelu">Kirjanpito-ohjelmisto</td><td data-label="Kustannus">alkaen 5,90 €/kk</td><td data-label="Kenelle maksat">Ohjelmistotoimittaja</td></tr>
+<tr><td data-label="Palvelu">Google Workspace (sähköposti yritys.fi)</td><td data-label="Kustannus">~14 €/kk</td><td data-label="Kenelle maksat">Google</td></tr>
+<tr><td data-label="Palvelu">Mainosbudjetti</td><td data-label="Kustannus">10–50 €/pv</td><td data-label="Kenelle maksat">Facebook / Google</td></tr>
+<tr><td data-label="Palvelu">Jatkuva kirjanpito + hosting</td><td data-label="Kustannus">alkaen 50 €/kk</td><td data-label="Kenelle maksat">Tilitoimisto Suomalainen</td></tr>
+<tr><td data-label="Palvelu">Jatkuva mainonnan hoito (valinnainen)</td><td data-label="Kustannus">250 €/kk</td><td data-label="Kenelle maksat">Tilitoimisto Suomalainen</td></tr>
 </tbody>
 </table>
 
