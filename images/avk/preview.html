@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<title>AVK-kuvien esikatselu (v2)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{margin:0;background:#1a1a1a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:20px}
+h1{text-align:center;margin:10px 0 6px;color:#ffa726}
+.intro{text-align:center;max-width:800px;margin:0 auto 30px;opacity:.85;line-height:1.6}
+.intro b{color:#ffa726}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;max-width:1400px;margin:0 auto}
+.item{background:#222;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.item h2{margin:0;padding:14px 18px;font-size:1em;font-weight:700;color:#ffa726;background:rgba(255,167,38,.08);border-bottom:1px solid rgba(255,167,38,.2)}
+.item .file{font-family:monospace;font-size:.85em;opacity:.7;font-weight:400;margin-left:10px;color:#fff}
+.preview{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000}
+.preview img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) brightness(.8)}
+.preview .overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;box-sizing:border-box}
+.preview .overlay h3{margin:0 0 8px;font-size:1.4em;color:#fff}
+.preview .overlay p{margin:0;font-size:.95em;opacity:.85}
+.note{padding:14px 18px;font-size:.88em;opacity:.8;line-height:1.5;border-top:1px solid rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+<h1>Avaimet käteen — taustakuvat (v2)</h1>
+<p class="intro">Kaikki ehdokkaat <b>kasvottomia</b>. Suodatin: <code style="background:rgba(255,167,38,.15);padding:2px 8px;border-radius:4px;color:#ffa726">grayscale(1) brightness(.8)</code> — sama tumman harmaa kuin nykyisillä sivuilla.</p>
+
+<div class="grid">
+
+<div class="item">
+<h2>1. Hero <span class="file">00-hero.png</span></h2>
+<div class="preview"><img src="00-hero.png" alt=""><div class="overlay"><h3>Yritys avaimet käteen</h3><p>NEW BUSINESS mind map + ALL-IN-ONE BUSINESS PACKAGE laptop — ei kasvoja</p></div></div>
+<div class="note">Lataamasi uusi versio — kasvoja ei näy. Sopii suoraan paketin ydinviestinä.</div>
+</div>
+
+<div class="item">
+<h2>2. Mitä sisältyy <span class="file">02-sketches.jpg</span></h2>
+<div class="preview"><img src="02-sketches.jpg" alt=""><div class="overlay"><h3>Mitä 999 € sisältää</h3><p>Wireframit ja suunnitelmat — "teemme yhdessä"</p></div></div>
+<div class="note">Kädet, kynät, käsin piirretyt rakenteet — yhteistyöteema.</div>
+</div>
+
+<div class="item">
+<h2>3. Näin etenemme <span class="file">05-calendar.jpg</span></h2>
+<div class="preview"><img src="05-calendar.jpg" alt=""><div class="overlay"><h3>Näin etenemme</h3><p>Käsin piirretty kalenteri — aikataulu/prosessi</p></div></div>
+<div class="note">Bullet journal — aikataulu/etenemiskaavio.</div>
+</div>
+
+<div class="item">
+<h2>4. Kenelle sopii <span class="file">06-design.jpg</span></h2>
+<div class="preview"><img src="06-design.jpg" alt=""><div class="overlay"><h3>Kenelle sopii?</h3><p>Yrittäjä laitteen ääressä — kohderyhmä</p></div></div>
+<div class="note">Vain kädet näkyvät, ei kasvoja.</div>
+</div>
+
+<div class="item">
+<h2>5. Mitä maksaa lisäksi <span class="file">09-euro.jpg</span></h2>
+<div class="preview"><img src="09-euro.jpg" alt=""><div class="overlay"><h3>Mitä maksaa lisäksi?</h3><p>Kädet laskimella — selvät kustannukset</p></div></div>
+<div class="note">Vaihdettu pois numerodashboardista. Kädet ja laskin, ei kasvoja.</div>
+</div>
+
+<div class="item">
+<h2>6. UKK <span class="file">02-sketches.jpg (toistuu)</span></h2>
+<div class="preview"><img src="02-sketches.jpg" alt=""><div class="overlay"><h3>Usein kysytyt kysymykset</h3><p>Sama kuva kuin osiossa 2</p></div></div>
+<div class="note">Tällä hetkellä toistuu — voidaan vaihtaa muuhun jos haluat erilaisen.</div>
+</div>
+
+<div class="item">
+<h2>7. Varaa aika <span class="file">07-coffee.jpg</span></h2>
+<div class="preview"><img src="07-coffee.jpg" alt=""><div class="overlay"><h3>Varaa kartoituskeskustelu</h3><p>Kolme kahvikuppia — rento tapaaminen</p></div></div>
+<div class="note">Vaihdettu kahvikuvaksi kuten pyysit.</div>
+</div>
+
+</div>
+
+<h2 style="margin:60px 0 20px;text-align:center;color:#ffa726">Vapaat varakuvat</h2>
+<div class="grid" style="max-width:800px">
+<div class="item">
+<h2>10-finance-desk.jpg <span class="file">(varakuva)</span></h2>
+<div class="preview"><img src="10-finance-desk.jpg" alt=""><div class="overlay"><h3>Käsi allekirjoittamassa</h3><p>Vaihtoehto esim. UKK:lle</p></div></div>
+<div class="note">Voidaan käyttää jos haluat eri kuvan UKK:lle (jotta 02-sketches ei toistu).</div>
+</div>
+</div>
+
+</body>
+</html>
