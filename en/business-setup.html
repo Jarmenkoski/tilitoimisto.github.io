@@ -35,6 +35,8 @@
 .avk-hero-price{display:inline-flex;align-items:center;gap:10px;margin:0 0 10px;padding:10px 28px 18px;background:rgba(255,167,38,.12);border:2px solid #ffa726;border-radius:12px;line-height:1}
 .avk-hero-price .avk-num{font-size:2.6em;font-weight:800;color:#ffa726;line-height:1}
 .avk-hero-price .avk-unit{font-size:.95em;opacity:.9;line-height:1}
+.avk-hero-bg img{filter:grayscale(1) brightness(1.1)!important}
+.avk-hero-bg::before{background-color:rgba(0,0,0,.3)!important}
 .avk-hero-save{font-size:.92em;opacity:.8;margin:0 0 30px}
 .avk-hero-save strong{color:#ffa726}
 .avk-cta-primary{display:inline-block;padding:16px 44px;background:#ffa726;color:#1a1a1a;font-weight:700;font-size:1.08em;text-decoration:none;border-radius:4px;transition:background .2s,transform .2s;margin-top:10px}
@@ -252,7 +254,7 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <!-- ============ 1. HERO ============ -->
 <section class="s s-basic cf sc-m wnd-background-image wnd-w-wider wnd-s-normal wnd-h-auto wn-space-top">
 <div class="s-w cf"><div class="s-o s-fs cf">
-<div class="s-bg cf"><div class="s-bg-l wnd-background-image fx-grayscale-dark bgpos-center-center bgatt-scroll overlay-black">
+<div class="s-bg cf"><div class="s-bg-l wnd-background-image fx-grayscale-dark bgpos-center-center bgatt-scroll overlay-black avk-hero-bg">
 <picture><img src="../images/avk/00-hero.png" width="1600" height="900" alt="All-in-one business setup for new entrepreneurs" loading="lazy"></picture>
 </div></div>
 <div class="s-c s-fs cf">
