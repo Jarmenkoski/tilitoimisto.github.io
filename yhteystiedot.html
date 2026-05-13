@@ -18,6 +18,19 @@
   gtag('js', new Date());
   gtag('config', 'G-Y3RRN6KZFE');
 </script>
+<style>
+#menu ul.level-1>li.has-sub{position:relative}
+#menu ul.level-1>li.has-sub>.submenu{display:none;position:absolute;top:100%;left:0;z-index:1000;background:rgba(20,20,20,.97);min-width:240px;padding:8px 0;border-radius:0 0 6px 6px;box-shadow:0 6px 16px rgba(0,0,0,.4);list-style:none;margin:0}
+#menu ul.level-1>li.has-sub:hover>.submenu,
+#menu ul.level-1>li.has-sub:focus-within>.submenu{display:block}
+#menu ul.level-1>li.has-sub>.submenu>li{display:block;margin:0;padding:0;list-style:none}
+#menu ul.level-1>li.has-sub>.submenu>li>a{display:block;padding:11px 18px;color:#fff;text-decoration:none;font-size:.95em;white-space:nowrap;transition:background .15s,color .15s;font-weight:500}
+#menu ul.level-1>li.has-sub>.submenu>li>a:hover{background:#ffa726;color:#1a1a1a}
+@media(max-width:900px){
+#menu ul.level-1>li.has-sub>.submenu{position:static;display:block;background:transparent;box-shadow:none;padding:0 0 0 18px;min-width:0;border-radius:0}
+#menu ul.level-1>li.has-sub>.submenu>li>a{padding:8px 0;font-size:.92em;opacity:.85}
+}
+</style>
 
 </head>
 <body class="l wt-page ac-i ac-n l-boxed b-btn-sq b-btn-s-m b-btn-dn b-btn-bw-1 img-d-n img-t-u img-h-z line-solid b-e-ds lbox-l c-s-n wnd-free-bar-fixed wnd-fe desktop menu-ready">
@@ -115,8 +128,12 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 		</li><li >
 			<a class="menu-item" href="https://tilitoimistosuomalainen.fi/palvelut"><span class="menu-item-text">Palvelut</span></a>
 
-		</li><li >
-			<a class="menu-item" href="https://tilitoimistosuomalainen.fi/yritys-avaimet-kateen"><span class="menu-item-text">Avaimet käteen</span></a>
+		</li><li class="has-sub">
+			<a class="menu-item" href="https://tilitoimistosuomalainen.fi/yritys-avaimet-kateen"><span class="menu-item-text">Avaimet käteen ▾</span></a>
+				<ul class="submenu">
+					<li><a href="https://tilitoimistosuomalainen.fi/yritys-avaimet-kateen">Avaimet käteen</a></li>
+					<li><a href="https://tilitoimistosuomalainen.fi/yritys-avaimet-kateen-laaja">Avaimet käteen Laaja</a></li>
+				</ul>
 
 		</li><li class="wnd-active wnd-active-path" >
 			<a class="menu-item" href="https://tilitoimistosuomalainen.fi/yhteystiedot"><span class="menu-item-text">Yhteystiedot</span></a>
