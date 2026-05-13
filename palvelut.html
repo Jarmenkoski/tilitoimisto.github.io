@@ -333,7 +333,7 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <div class="s-c s-fs cf">
 
 <style>
-.calc-wrap{max-width:700px;margin:0 auto;padding:40px 20px;text-align:center;color:#fff}
+.calc-wrap{max-width:700px;margin:0 auto;padding:40px 20px;text-align:center;color:#fff;min-height:880px}
 .calc-wrap h2{font-size:1.8em;margin-bottom:8px;font-weight:700}
 .calc-wrap .calc-sub{font-size:1em;opacity:.75;margin-bottom:30px}
 .calc-tabs{display:flex;justify-content:center;gap:8px;margin:0 auto 28px;max-width:500px;flex-wrap:wrap}
@@ -410,7 +410,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="kv-100"><td>60–100 kpl/kvartaali</td><td>100,00 €/kvartaali</td></tr>
 <tr id="kv-200"><td>100–200 kpl/kvartaali</td><td>1,00 €/tosite</td></tr>
 <tr id="kv-500"><td>200–500 kpl/kvartaali</td><td>0,90 €/tosite</td></tr>
-<tr id="kv-501"><td>500+ kpl/kvartaali</td><td>0,80 €/tosite</td></tr>
+<tr id="kv-700"><td>500–700 kpl/kvartaali</td><td>0,80 €/tosite</td></tr>
+<tr id="kv-ask"><td>700+ kpl/kvartaali</td><td>Pyydä tarjous</td></tr>
 </tbody>
 </table>
 
@@ -421,7 +422,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="v-100"><td>50–100 kpl/vuosi</td><td>130,00 €/vuosi</td></tr>
 <tr id="v-200"><td>100–200 kpl/vuosi</td><td>1,25 €/tosite</td></tr>
 <tr id="v-500"><td>200–500 kpl/vuosi</td><td>1,00 €/tosite</td></tr>
-<tr id="v-501"><td>500+ kpl/vuosi</td><td>0,80 €/tosite</td></tr>
+<tr id="v-1500"><td>500–1500 kpl/vuosi</td><td>0,80 €/tosite</td></tr>
+<tr id="v-ask"><td>1500+ kpl/vuosi</td><td>Pyydä tarjous</td></tr>
 </tbody>
 </table>
 
@@ -469,34 +471,37 @@ return{price:0,unit:'Yli 500 tositetta/kk',row:'kk-500',ask:true};
 },
 kv:{
 label:'Tositteiden määrä kvartaalissa:',
-max:700,
+max:750,
 def:100,
-rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-501'],
+rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-700','kv-ask'],
 calc:function(n){
 if(n<=30)return{price:50,unit:'kvartaalissa',row:'kv-30'};
 if(n<=60)return{price:80,unit:'kvartaalissa',row:'kv-60'};
 if(n<=100)return{price:100,unit:'kvartaalissa',row:'kv-100'};
 if(n<=200)return{price:n*1.00,unit:'kvartaalissa (1,00 €/tosite)',row:'kv-200'};
 if(n<=500)return{price:n*0.90,unit:'kvartaalissa (0,90 €/tosite)',row:'kv-500'};
-return{price:n*0.80,unit:'kvartaalissa (0,80 €/tosite)',row:'kv-501'};
+if(n<=700)return{price:n*0.80,unit:'kvartaalissa (0,80 €/tosite)',row:'kv-700'};
+return{price:0,unit:'Yli 700 tositetta/kvartaali',row:'kv-ask',ask:true};
 }
 },
 v:{
 label:'Tositteiden määrä vuodessa:',
-max:1500,
+max:1550,
 def:200,
-rows:['v-50','v-100','v-200','v-500','v-501'],
+rows:['v-50','v-100','v-200','v-500','v-1500','v-ask'],
 calc:function(n){
 if(n<=50)return{price:75,unit:'vuodessa',row:'v-50'};
 if(n<=100)return{price:130,unit:'vuodessa',row:'v-100'};
 if(n<=200)return{price:n*1.25,unit:'vuodessa (1,25 €/tosite)',row:'v-200'};
 if(n<=500)return{price:n*1.00,unit:'vuodessa (1,00 €/tosite)',row:'v-500'};
-return{price:n*0.80,unit:'vuodessa (0,80 €/tosite)',row:'v-501'};
+if(n<=1500)return{price:n*0.80,unit:'vuodessa (0,80 €/tosite)',row:'v-1500'};
+return{price:0,unit:'Yli 1500 tositetta/vuosi',row:'v-ask',ask:true};
 }
 }
 };
 
 var jaksoSlugit={kk:'kuukausi',kv:'kvartaali',v:'vuosi'};
+var askThresholds={kk:500,kv:700,v:1500};
 var current='kk';
 
 function update(){
@@ -506,8 +511,9 @@ if(isNaN(n))n=p.def;
 var pct=((n-1)/(p.max-1))*100;
 slider.style.setProperty('--val',pct+'%');
 var r=p.calc(n);
+var threshold=askThresholds[current];
 if(r.ask){
-countEl.textContent=n>500?'500+':n;
+countEl.textContent=threshold+'+';
 priceEl.textContent='Pyydä tarjous';
 unitEl.textContent=r.unit;
 }else{
@@ -515,7 +521,7 @@ countEl.textContent=n;
 priceEl.textContent=r.price.toFixed(2).replace('.',',')+' €';
 unitEl.textContent=r.unit;
 }
-ctaEl.href='https://tilitoimistosuomalainen.fi/yhteystiedot?tositteet='+(r.ask?'500%2B':n)+'&jakso='+jaksoSlugit[current];
+ctaEl.href='https://tilitoimistosuomalainen.fi/yhteystiedot?tositteet='+(r.ask?threshold+'%2B':n)+'&jakso='+jaksoSlugit[current];
 for(var i=0;i<p.rows.length;i++){
 var el=document.getElementById(p.rows[i]);
 if(el)el.className=p.rows[i]===r.row?'active-row':'';
