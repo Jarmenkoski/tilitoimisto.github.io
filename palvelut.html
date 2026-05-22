@@ -414,7 +414,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="kk-80"><td>61–80 kpl/kk</td><td>103,00 €/kk</td></tr>
 <tr id="kk-100"><td>81–100 kpl/kk</td><td>115,00 €/kk</td></tr>
 <tr id="kk-199"><td>101–200 kpl/kk</td><td>1,05 €/tosite</td></tr>
-<tr id="kk-200"><td>200+ kpl/kk</td><td>1,00 €/tosite</td></tr>
+<tr id="kk-200"><td>201–500 kpl/kk</td><td>1,00 €/tosite</td></tr>
+<tr id="kk-500"><td>500+ kpl/kk</td><td>Pyydä tarjous</td></tr>
 </tbody>
 </table>
 
@@ -426,7 +427,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="kv-100"><td>61–100 kpl/kvartaali</td><td>125,00 €/kvartaali</td></tr>
 <tr id="kv-200"><td>101–200 kpl/kvartaali</td><td>1,05 €/tosite</td></tr>
 <tr id="kv-500"><td>201–500 kpl/kvartaali</td><td>1,00 €/tosite</td></tr>
-<tr id="kv-700"><td>500+ kpl/kvartaali</td><td>0,90 €/tosite</td></tr>
+<tr id="kv-700"><td>501–1000 kpl/kvartaali</td><td>0,90 €/tosite</td></tr>
+<tr id="kv-ask"><td>1000+ kpl/kvartaali</td><td>Pyydä tarjous</td></tr>
 </tbody>
 </table>
 
@@ -438,7 +440,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="v-200"><td>101–200 kpl/vuosi</td><td>1,25 €/tosite</td></tr>
 <tr id="v-500"><td>201–500 kpl/vuosi</td><td>1,00 €/tosite</td></tr>
 <tr id="v-1500"><td>501–1000 kpl/vuosi</td><td>0,80 €/tosite</td></tr>
-<tr id="v-ask"><td>1000+ kpl/vuosi</td><td>0,70 €/tosite</td></tr>
+<tr id="v-ask"><td>1001–1500 kpl/vuosi</td><td>0,70 €/tosite</td></tr>
+<tr id="v-quote"><td>1500+ kpl/vuosi</td><td>Pyydä tarjous</td></tr>
 </tbody>
 </table>
 
@@ -469,9 +472,9 @@ var tabs=document.querySelectorAll('.calc-tab');
 var periods={
 kk:{
 label:'Tositteiden määrä kuukaudessa:',
-max:500,
+max:520,
 def:50,
-rows:['kk-20','kk-40','kk-60','kk-80','kk-100','kk-199','kk-200'],
+rows:['kk-20','kk-40','kk-60','kk-80','kk-100','kk-199','kk-200','kk-500'],
 calc:function(n){
 if(n<=20)return{price:50,unit:'kuukaudessa',row:'kk-20'};
 if(n<=40)return{price:70,unit:'kuukaudessa',row:'kk-40'};
@@ -479,41 +482,44 @@ if(n<=60)return{price:88,unit:'kuukaudessa',row:'kk-60'};
 if(n<=80)return{price:103,unit:'kuukaudessa',row:'kk-80'};
 if(n<=100)return{price:115,unit:'kuukaudessa',row:'kk-100'};
 if(n<=200)return{price:n*1.05,unit:'kuukaudessa (1,05 €/tosite)',row:'kk-199'};
-return{price:n*1.00,unit:'kuukaudessa (1,00 €/tosite)',row:'kk-200'};
+if(n<=500)return{price:n*1.00,unit:'kuukaudessa (1,00 €/tosite)',row:'kk-200'};
+return{price:0,unit:'Yli 500 tositetta/kk',row:'kk-500',ask:true};
 }
 },
 kv:{
 label:'Tositteiden määrä kvartaalissa:',
-max:800,
+max:1020,
 def:100,
-rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-700'],
+rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-700','kv-ask'],
 calc:function(n){
 if(n<=30)return{price:75,unit:'kvartaalissa',row:'kv-30'};
 if(n<=60)return{price:100,unit:'kvartaalissa',row:'kv-60'};
 if(n<=100)return{price:125,unit:'kvartaalissa',row:'kv-100'};
 if(n<=200)return{price:n*1.05,unit:'kvartaalissa (1,05 €/tosite)',row:'kv-200'};
 if(n<=500)return{price:n*1.00,unit:'kvartaalissa (1,00 €/tosite)',row:'kv-500'};
-return{price:n*0.90,unit:'kvartaalissa (0,90 €/tosite)',row:'kv-700'};
+if(n<=1000)return{price:n*0.90,unit:'kvartaalissa (0,90 €/tosite)',row:'kv-700'};
+return{price:0,unit:'Yli 1000 tositetta/kvartaali',row:'kv-ask',ask:true};
 }
 },
 v:{
 label:'Tositteiden määrä vuodessa:',
-max:1500,
+max:1520,
 def:200,
-rows:['v-50','v-100','v-200','v-500','v-1500','v-ask'],
+rows:['v-50','v-100','v-200','v-500','v-1500','v-ask','v-quote'],
 calc:function(n){
 if(n<=50)return{price:125,unit:'vuodessa',row:'v-50'};
 if(n<=100)return{price:150,unit:'vuodessa',row:'v-100'};
 if(n<=200)return{price:n*1.25,unit:'vuodessa (1,25 €/tosite)',row:'v-200'};
 if(n<=500)return{price:n*1.00,unit:'vuodessa (1,00 €/tosite)',row:'v-500'};
 if(n<=1000)return{price:n*0.80,unit:'vuodessa (0,80 €/tosite)',row:'v-1500'};
-return{price:n*0.70,unit:'vuodessa (0,70 €/tosite)',row:'v-ask'};
+if(n<=1500)return{price:n*0.70,unit:'vuodessa (0,70 €/tosite)',row:'v-ask'};
+return{price:0,unit:'Yli 1500 tositetta/vuosi',row:'v-quote',ask:true};
 }
 }
 };
 
 var jaksoSlugit={kk:'kuukausi',kv:'kvartaali',v:'vuosi'};
-var askThresholds={kk:500,kv:700,v:1500};
+var askThresholds={kk:500,kv:1000,v:1500};
 var current='kk';
 
 function update(){

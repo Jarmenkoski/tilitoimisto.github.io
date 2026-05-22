@@ -409,7 +409,7 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <span style="opacity:.6;font-size:.85em">documents/mo</span>
 </div>
 <a class="clc-res" id="idx-link" href="/en/contact?tositteet=50">
-<div class="clc-price" id="idx-price">78,00 €/mo</div>
+<div class="clc-price" id="idx-price">88,00 €/mo</div>
 <div class="clc-info" id="idx-info"></div>
 <div class="clc-res-hint">Click to request a quote</div>
 </a>
@@ -421,11 +421,10 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 (function(){
 var s=document.getElementById('idx-rng'),c=document.getElementById('idx-cnt'),p=document.getElementById('idx-price'),inf=document.getElementById('idx-info'),lnk=document.getElementById('idx-link');
 function pr(n){
-if(n<=20)return{p:40,t:''};if(n<=40)return{p:60,t:''};if(n<=60)return{p:78,t:''};
-if(n<=80)return{p:93,t:''};if(n<=100)return{p:105,t:''};
-if(n<200)return{p:n*1.00,t:'1,00 \u20ac/document',ask:false};
-if(n<300)return{p:n*0.90,t:'0,90 \u20ac/document',ask:false};
-if(n<=500)return{p:n*0.80,t:'0,80 \u20ac/document',ask:false};
+if(n<=20)return{p:50,t:''};if(n<=40)return{p:70,t:''};if(n<=60)return{p:88,t:''};
+if(n<=80)return{p:103,t:''};if(n<=100)return{p:115,t:''};
+if(n<=200)return{p:n*1.05,t:'1,05 \u20ac/document'};
+if(n<=500)return{p:n*1.00,t:'1,00 \u20ac/document'};
 return{p:0,t:'',ask:true};
 }
 function u(){

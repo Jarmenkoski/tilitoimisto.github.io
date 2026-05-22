@@ -404,7 +404,8 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <tr id="row-80"><td>61–80 docs/mo</td><td>103,00 €/mo</td></tr>
 <tr id="row-100"><td>81–100 docs/mo</td><td>115,00 €/mo</td></tr>
 <tr id="row-199"><td>101–200 docs/mo</td><td>1,05 €/document</td></tr>
-<tr id="row-200"><td>200+ docs/mo</td><td>1,00 €/document</td></tr>
+<tr id="row-200"><td>201–500 docs/mo</td><td>1,00 €/document</td></tr>
+<tr id="row-500"><td>500+ docs/mo</td><td>Request Quote</td></tr>
 </tbody>
 </table>
 
@@ -421,7 +422,7 @@ var countEl=document.getElementById('calc-count');
 var priceEl=document.getElementById('calc-price');
 var unitEl=document.getElementById('calc-unit');
 var ctaEl=document.getElementById('calc-cta');
-var rows={20:'row-20',40:'row-40',60:'row-60',80:'row-80',100:'row-100',199:'row-199',200:'row-200'};
+var rows={20:'row-20',40:'row-40',60:'row-60',80:'row-80',100:'row-100',199:'row-199',200:'row-200',500:'row-500'};
 
 function calc(n){
 if(n<=20)return{price:50,unit:'per month',row:'row-20'};
@@ -430,7 +431,8 @@ if(n<=60)return{price:88,unit:'per month',row:'row-60'};
 if(n<=80)return{price:103,unit:'per month',row:'row-80'};
 if(n<=100)return{price:115,unit:'per month',row:'row-100'};
 if(n<=200)return{price:n*1.05,unit:'per month (1,05 €/document)',row:'row-199'};
-return{price:n*1.00,unit:'per month (1,00 €/document)',row:'row-200'};
+if(n<=500)return{price:n*1.00,unit:'per month (1,00 €/document)',row:'row-200'};
+return{price:0,unit:'',row:'row-500',ask:true};
 }
 
 function update(){

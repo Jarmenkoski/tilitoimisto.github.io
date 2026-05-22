@@ -463,7 +463,7 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 <span style="opacity:.6;font-size:.85em" id="idx-unit">tositetta/kk</span>
 </div>
 <a class="clc-res" id="idx-link" href="https://tilitoimistosuomalainen.fi/yhteystiedot?tositteet=50&amp;jakso=kuukausi">
-<div class="clc-price" id="idx-price">78,00 €/kk</div>
+<div class="clc-price" id="idx-price">88,00 €/kk</div>
 <div class="clc-info" id="idx-info"></div>
 <div class="clc-res-hint">Klikkaa pyytääksesi tarjous</div>
 </a>
@@ -477,25 +477,25 @@ var s=document.getElementById('idx-rng'),c=document.getElementById('idx-cnt'),p=
 var tabs=document.querySelectorAll('.clc-tab');
 var periods={
 kk:{max:520,def:50,suf:'/kk',unit:'tositetta/kk',ask:500,slug:'kuukausi',pr:function(n){
-if(n<=20)return{p:40,t:''};if(n<=40)return{p:60,t:''};if(n<=60)return{p:78,t:''};
-if(n<=80)return{p:93,t:''};if(n<=100)return{p:105,t:''};
-if(n<200)return{p:n*1.00,t:'1,00 \u20ac/tosite'};
-if(n<300)return{p:n*0.90,t:'0,90 \u20ac/tosite'};
-if(n<=500)return{p:n*0.80,t:'0,80 \u20ac/tosite'};
+if(n<=20)return{p:50,t:''};if(n<=40)return{p:70,t:''};if(n<=60)return{p:88,t:''};
+if(n<=80)return{p:103,t:''};if(n<=100)return{p:115,t:''};
+if(n<=200)return{p:n*1.05,t:'1,05 \u20ac/tosite'};
+if(n<=500)return{p:n*1.00,t:'1,00 \u20ac/tosite'};
 return{p:0,t:'',ask:true};
 }},
-kv:{max:750,def:100,suf:'/kvartaali',unit:'tositetta/kvartaali',ask:700,slug:'kvartaali',pr:function(n){
-if(n<=30)return{p:50,t:''};if(n<=60)return{p:80,t:''};if(n<=100)return{p:100,t:''};
-if(n<=200)return{p:n*1.00,t:'1,00 \u20ac/tosite'};
-if(n<=500)return{p:n*0.90,t:'0,90 \u20ac/tosite'};
-if(n<=700)return{p:n*0.80,t:'0,80 \u20ac/tosite'};
+kv:{max:1020,def:100,suf:'/kvartaali',unit:'tositetta/kvartaali',ask:1000,slug:'kvartaali',pr:function(n){
+if(n<=30)return{p:75,t:''};if(n<=60)return{p:100,t:''};if(n<=100)return{p:125,t:''};
+if(n<=200)return{p:n*1.05,t:'1,05 \u20ac/tosite'};
+if(n<=500)return{p:n*1.00,t:'1,00 \u20ac/tosite'};
+if(n<=1000)return{p:n*0.90,t:'0,90 \u20ac/tosite'};
 return{p:0,t:'',ask:true};
 }},
-v:{max:1550,def:200,suf:'/vuosi',unit:'tositetta/vuosi',ask:1500,slug:'vuosi',pr:function(n){
-if(n<=50)return{p:75,t:''};if(n<=100)return{p:130,t:''};
+v:{max:1520,def:200,suf:'/vuosi',unit:'tositetta/vuosi',ask:1500,slug:'vuosi',pr:function(n){
+if(n<=50)return{p:125,t:''};if(n<=100)return{p:150,t:''};
 if(n<=200)return{p:n*1.25,t:'1,25 \u20ac/tosite'};
 if(n<=500)return{p:n*1.00,t:'1,00 \u20ac/tosite'};
-if(n<=1500)return{p:n*0.80,t:'0,80 \u20ac/tosite'};
+if(n<=1000)return{p:n*0.80,t:'0,80 \u20ac/tosite'};
+if(n<=1500)return{p:n*0.70,t:'0,70 \u20ac/tosite'};
 return{p:0,t:'',ask:true};
 }}
 };
