@@ -391,22 +391,20 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 </div>
 
 <div class="calc-result">
-<div class="calc-price" id="calc-price">78,00 €</div>
+<div class="calc-price" id="calc-price">88,00 €</div>
 <div class="calc-unit" id="calc-unit">per month</div>
 </div>
 
 <table class="calc-table">
 <thead><tr><th>Documents</th><th>Price</th></tr></thead>
 <tbody>
-<tr id="row-20"><td>1–20 docs/mo</td><td>40,00 €/mo</td></tr>
-<tr id="row-40"><td>20–40 docs/mo</td><td>60,00 €/mo</td></tr>
-<tr id="row-60"><td>40–60 docs/mo</td><td>78,00 €/mo</td></tr>
-<tr id="row-80"><td>60–80 docs/mo</td><td>93,00 €/mo</td></tr>
-<tr id="row-100"><td>80–100 docs/mo</td><td>105,00 €/mo</td></tr>
-<tr id="row-199"><td>100–199 docs/mo</td><td>1,00 €/document</td></tr>
-<tr id="row-200"><td>200–299 docs/mo</td><td>0,90 €/document</td></tr>
-<tr id="row-300"><td>300–500 docs/mo</td><td>0,80 €/document</td></tr>
-<tr id="row-500"><td>500+ docs/mo</td><td>Request Quote</td></tr>
+<tr id="row-20"><td>1–20 docs/mo</td><td>50,00 €/mo</td></tr>
+<tr id="row-40"><td>21–40 docs/mo</td><td>70,00 €/mo</td></tr>
+<tr id="row-60"><td>41–60 docs/mo</td><td>88,00 €/mo</td></tr>
+<tr id="row-80"><td>61–80 docs/mo</td><td>103,00 €/mo</td></tr>
+<tr id="row-100"><td>81–100 docs/mo</td><td>115,00 €/mo</td></tr>
+<tr id="row-199"><td>101–200 docs/mo</td><td>1,05 €/document</td></tr>
+<tr id="row-200"><td>200+ docs/mo</td><td>1,00 €/document</td></tr>
 </tbody>
 </table>
 
@@ -423,18 +421,16 @@ var countEl=document.getElementById('calc-count');
 var priceEl=document.getElementById('calc-price');
 var unitEl=document.getElementById('calc-unit');
 var ctaEl=document.getElementById('calc-cta');
-var rows={20:'row-20',40:'row-40',60:'row-60',80:'row-80',100:'row-100',199:'row-199',200:'row-200',300:'row-300'};
+var rows={20:'row-20',40:'row-40',60:'row-60',80:'row-80',100:'row-100',199:'row-199',200:'row-200'};
 
 function calc(n){
-if(n<=20)return{price:40,unit:'per month',row:'row-20'};
-if(n<=40)return{price:60,unit:'per month',row:'row-40'};
-if(n<=60)return{price:78,unit:'per month',row:'row-60'};
-if(n<=80)return{price:93,unit:'per month',row:'row-80'};
-if(n<=100)return{price:105,unit:'per month',row:'row-100'};
-if(n<200)return{price:n*1.00,unit:'per month (1,00 €/document)',row:'row-199',ask:false};
-if(n<300)return{price:n*0.90,unit:'per month (0,90 €/document)',row:'row-200',ask:false};
-if(n<=500)return{price:n*0.80,unit:'per month (0,80 €/document)',row:'row-300',ask:false};
-return{price:0,unit:'',row:'row-500',ask:true};
+if(n<=20)return{price:50,unit:'per month',row:'row-20'};
+if(n<=40)return{price:70,unit:'per month',row:'row-40'};
+if(n<=60)return{price:88,unit:'per month',row:'row-60'};
+if(n<=80)return{price:103,unit:'per month',row:'row-80'};
+if(n<=100)return{price:115,unit:'per month',row:'row-100'};
+if(n<=200)return{price:n*1.05,unit:'per month (1,05 €/document)',row:'row-199'};
+return{price:n*1.00,unit:'per month (1,00 €/document)',row:'row-200'};
 }
 
 function update(){
@@ -493,7 +489,7 @@ update();
 
 <div class="faq-item">
 <button class="faq-q">How much does accounting cost?<span class="faq-arrow">&#9660;</span></button>
-<div class="faq-a">The accounting cost depends on the number of documents. Small business accounting starts from 40 euros per month. Try the price calculator above to get an estimate, or request a quote – we will provide an exact price for your company's needs.</div>
+<div class="faq-a">The accounting cost depends on the number of documents. Small business accounting starts from 50 euros per month. Try the price calculator above to get an estimate, or request a quote – we will provide an exact price for your company's needs.</div>
 </div>
 
 <div class="faq-item">

@@ -401,47 +401,44 @@ document.getElementById('cb-no').addEventListener('click',function(){localStorag
 </div>
 
 <div class="calc-result">
-<div class="calc-price" id="calc-price">78,00 €</div>
+<div class="calc-price" id="calc-price">88,00 €</div>
 <div class="calc-unit" id="calc-unit">kuukaudessa</div>
 </div>
 
 <table class="calc-table" id="calc-table-kk">
 <thead><tr><th>Tositteet</th><th>Hinta</th></tr></thead>
 <tbody>
-<tr id="kk-20"><td>1–20 kpl/kk</td><td>40,00 €/kk</td></tr>
-<tr id="kk-40"><td>20–40 kpl/kk</td><td>60,00 €/kk</td></tr>
-<tr id="kk-60"><td>40–60 kpl/kk</td><td>78,00 €/kk</td></tr>
-<tr id="kk-80"><td>60–80 kpl/kk</td><td>93,00 €/kk</td></tr>
-<tr id="kk-100"><td>80–100 kpl/kk</td><td>105,00 €/kk</td></tr>
-<tr id="kk-199"><td>100–199 kpl/kk</td><td>1,00 €/tosite</td></tr>
-<tr id="kk-200"><td>200–299 kpl/kk</td><td>0,90 €/tosite</td></tr>
-<tr id="kk-300"><td>300–500 kpl/kk</td><td>0,80 €/tosite</td></tr>
-<tr id="kk-500"><td>500+ kpl/kk</td><td>Pyydä tarjous</td></tr>
+<tr id="kk-20"><td>1–20 kpl/kk</td><td>50,00 €/kk</td></tr>
+<tr id="kk-40"><td>21–40 kpl/kk</td><td>70,00 €/kk</td></tr>
+<tr id="kk-60"><td>41–60 kpl/kk</td><td>88,00 €/kk</td></tr>
+<tr id="kk-80"><td>61–80 kpl/kk</td><td>103,00 €/kk</td></tr>
+<tr id="kk-100"><td>81–100 kpl/kk</td><td>115,00 €/kk</td></tr>
+<tr id="kk-199"><td>101–200 kpl/kk</td><td>1,05 €/tosite</td></tr>
+<tr id="kk-200"><td>200+ kpl/kk</td><td>1,00 €/tosite</td></tr>
 </tbody>
 </table>
 
 <table class="calc-table" id="calc-table-kv" style="display:none">
 <thead><tr><th>Tositteet (kvartaali)</th><th>Hinta</th></tr></thead>
 <tbody>
-<tr id="kv-30"><td>1–30 kpl/kvartaali</td><td>50,00 €/kvartaali</td></tr>
-<tr id="kv-60"><td>30–60 kpl/kvartaali</td><td>80,00 €/kvartaali</td></tr>
-<tr id="kv-100"><td>60–100 kpl/kvartaali</td><td>100,00 €/kvartaali</td></tr>
-<tr id="kv-200"><td>100–200 kpl/kvartaali</td><td>1,00 €/tosite</td></tr>
-<tr id="kv-500"><td>200–500 kpl/kvartaali</td><td>0,90 €/tosite</td></tr>
-<tr id="kv-700"><td>500–700 kpl/kvartaali</td><td>0,80 €/tosite</td></tr>
-<tr id="kv-ask"><td>700+ kpl/kvartaali</td><td>Pyydä tarjous</td></tr>
+<tr id="kv-30"><td>1–30 kpl/kvartaali</td><td>75,00 €/kvartaali</td></tr>
+<tr id="kv-60"><td>31–60 kpl/kvartaali</td><td>100,00 €/kvartaali</td></tr>
+<tr id="kv-100"><td>61–100 kpl/kvartaali</td><td>125,00 €/kvartaali</td></tr>
+<tr id="kv-200"><td>101–200 kpl/kvartaali</td><td>1,05 €/tosite</td></tr>
+<tr id="kv-500"><td>201–500 kpl/kvartaali</td><td>1,00 €/tosite</td></tr>
+<tr id="kv-700"><td>500+ kpl/kvartaali</td><td>0,90 €/tosite</td></tr>
 </tbody>
 </table>
 
 <table class="calc-table" id="calc-table-v" style="display:none">
 <thead><tr><th>Tositteet (vuosi)</th><th>Hinta</th></tr></thead>
 <tbody>
-<tr id="v-50"><td>1–50 kpl/vuosi</td><td>75,00 €/vuosi</td></tr>
-<tr id="v-100"><td>50–100 kpl/vuosi</td><td>130,00 €/vuosi</td></tr>
-<tr id="v-200"><td>100–200 kpl/vuosi</td><td>1,25 €/tosite</td></tr>
-<tr id="v-500"><td>200–500 kpl/vuosi</td><td>1,00 €/tosite</td></tr>
-<tr id="v-1500"><td>500–1500 kpl/vuosi</td><td>0,80 €/tosite</td></tr>
-<tr id="v-ask"><td>1500+ kpl/vuosi</td><td>Pyydä tarjous</td></tr>
+<tr id="v-50"><td>1–50 kpl/vuosi</td><td>125,00 €/vuosi</td></tr>
+<tr id="v-100"><td>51–100 kpl/vuosi</td><td>150,00 €/vuosi</td></tr>
+<tr id="v-200"><td>101–200 kpl/vuosi</td><td>1,25 €/tosite</td></tr>
+<tr id="v-500"><td>201–500 kpl/vuosi</td><td>1,00 €/tosite</td></tr>
+<tr id="v-1500"><td>501–1000 kpl/vuosi</td><td>0,80 €/tosite</td></tr>
+<tr id="v-ask"><td>1000+ kpl/vuosi</td><td>0,70 €/tosite</td></tr>
 </tbody>
 </table>
 
@@ -472,48 +469,45 @@ var tabs=document.querySelectorAll('.calc-tab');
 var periods={
 kk:{
 label:'Tositteiden määrä kuukaudessa:',
-max:520,
+max:500,
 def:50,
-rows:['kk-20','kk-40','kk-60','kk-80','kk-100','kk-199','kk-200','kk-300','kk-500'],
+rows:['kk-20','kk-40','kk-60','kk-80','kk-100','kk-199','kk-200'],
 calc:function(n){
-if(n<=20)return{price:40,unit:'kuukaudessa',row:'kk-20'};
-if(n<=40)return{price:60,unit:'kuukaudessa',row:'kk-40'};
-if(n<=60)return{price:78,unit:'kuukaudessa',row:'kk-60'};
-if(n<=80)return{price:93,unit:'kuukaudessa',row:'kk-80'};
-if(n<=100)return{price:105,unit:'kuukaudessa',row:'kk-100'};
-if(n<200)return{price:n*1.00,unit:'kuukaudessa (1,00 €/tosite)',row:'kk-199'};
-if(n<300)return{price:n*0.90,unit:'kuukaudessa (0,90 €/tosite)',row:'kk-200'};
-if(n<=500)return{price:n*0.80,unit:'kuukaudessa (0,80 €/tosite)',row:'kk-300'};
-return{price:0,unit:'Yli 500 tositetta/kk',row:'kk-500',ask:true};
+if(n<=20)return{price:50,unit:'kuukaudessa',row:'kk-20'};
+if(n<=40)return{price:70,unit:'kuukaudessa',row:'kk-40'};
+if(n<=60)return{price:88,unit:'kuukaudessa',row:'kk-60'};
+if(n<=80)return{price:103,unit:'kuukaudessa',row:'kk-80'};
+if(n<=100)return{price:115,unit:'kuukaudessa',row:'kk-100'};
+if(n<=200)return{price:n*1.05,unit:'kuukaudessa (1,05 €/tosite)',row:'kk-199'};
+return{price:n*1.00,unit:'kuukaudessa (1,00 €/tosite)',row:'kk-200'};
 }
 },
 kv:{
 label:'Tositteiden määrä kvartaalissa:',
-max:750,
+max:800,
 def:100,
-rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-700','kv-ask'],
+rows:['kv-30','kv-60','kv-100','kv-200','kv-500','kv-700'],
 calc:function(n){
-if(n<=30)return{price:50,unit:'kvartaalissa',row:'kv-30'};
-if(n<=60)return{price:80,unit:'kvartaalissa',row:'kv-60'};
-if(n<=100)return{price:100,unit:'kvartaalissa',row:'kv-100'};
-if(n<=200)return{price:n*1.00,unit:'kvartaalissa (1,00 €/tosite)',row:'kv-200'};
-if(n<=500)return{price:n*0.90,unit:'kvartaalissa (0,90 €/tosite)',row:'kv-500'};
-if(n<=700)return{price:n*0.80,unit:'kvartaalissa (0,80 €/tosite)',row:'kv-700'};
-return{price:0,unit:'Yli 700 tositetta/kvartaali',row:'kv-ask',ask:true};
+if(n<=30)return{price:75,unit:'kvartaalissa',row:'kv-30'};
+if(n<=60)return{price:100,unit:'kvartaalissa',row:'kv-60'};
+if(n<=100)return{price:125,unit:'kvartaalissa',row:'kv-100'};
+if(n<=200)return{price:n*1.05,unit:'kvartaalissa (1,05 €/tosite)',row:'kv-200'};
+if(n<=500)return{price:n*1.00,unit:'kvartaalissa (1,00 €/tosite)',row:'kv-500'};
+return{price:n*0.90,unit:'kvartaalissa (0,90 €/tosite)',row:'kv-700'};
 }
 },
 v:{
 label:'Tositteiden määrä vuodessa:',
-max:1550,
+max:1500,
 def:200,
 rows:['v-50','v-100','v-200','v-500','v-1500','v-ask'],
 calc:function(n){
-if(n<=50)return{price:75,unit:'vuodessa',row:'v-50'};
-if(n<=100)return{price:130,unit:'vuodessa',row:'v-100'};
+if(n<=50)return{price:125,unit:'vuodessa',row:'v-50'};
+if(n<=100)return{price:150,unit:'vuodessa',row:'v-100'};
 if(n<=200)return{price:n*1.25,unit:'vuodessa (1,25 €/tosite)',row:'v-200'};
 if(n<=500)return{price:n*1.00,unit:'vuodessa (1,00 €/tosite)',row:'v-500'};
-if(n<=1500)return{price:n*0.80,unit:'vuodessa (0,80 €/tosite)',row:'v-1500'};
-return{price:0,unit:'Yli 1500 tositetta/vuosi',row:'v-ask',ask:true};
+if(n<=1000)return{price:n*0.80,unit:'vuodessa (0,80 €/tosite)',row:'v-1500'};
+return{price:n*0.70,unit:'vuodessa (0,70 €/tosite)',row:'v-ask'};
 }
 }
 };
@@ -608,7 +602,7 @@ update();
 
 <div class="faq-item">
 <button class="faq-q">Mitä kirjanpito maksaa?<span class="faq-arrow">&#9660;</span></button>
-<div class="faq-a">Kirjanpidon hinta riippuu tositteiden määrästä. Pienyrittäjän kirjanpito alkaa 40 eurosta kuukaudessa. Kokeile yllä olevaa hintalaskuria saadaksesi arvion, tai pyydä tarjous – kerromme tarkan hinnan yrityksesi tarpeisiin.</div>
+<div class="faq-a">Kirjanpidon hinta riippuu tositteiden määrästä. Pienyrittäjän kirjanpito alkaa 50 eurosta kuukaudessa. Kokeile yllä olevaa hintalaskuria saadaksesi arvion, tai pyydä tarjous – kerromme tarkan hinnan yrityksesi tarpeisiin.</div>
 </div>
 
 <div class="faq-item">
